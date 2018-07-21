@@ -6,13 +6,17 @@ class SimpleMath
     puts "Please input a second number:"
     @second_number = gets.chomp.to_i
 
+    output_results
+  end
+
+  private
+
+  def output_results
     puts "#{@first_number} + #{@second_number} = #{the_sum} /n
 #{@first_number} - #{@second_number} = #{difference} /n
 #{@first_number} * #{@second_number} = #{product} /n
 #{@first_number} / #{@second_number} = #{quotient} "
   end
-
-  private
 
   def the_sum
     @first_number + @second_number
