@@ -1,6 +1,14 @@
 class MadLib
 
   def start_game
+    adj, adv, noun, verb = get_user_input
+
+    puts "Do you #{verb} your #{adj + ' ' + noun + ' ' + adv}? That's hilarious!"
+  end
+
+  private
+
+  def get_user_input
     puts "Enter a noun: "
     noun = gets.chomp
     puts "Enter a verb: "
@@ -9,8 +17,7 @@ class MadLib
     adj = gets.chomp
     puts "Enter an adverb: "
     adv = gets.chomp
-
-    puts "Do you #{verb} your #{adj + ' ' + noun + ' ' + adv}? That's hilarious!"
+    return adj, adv, noun, verb
   end
 end
 
