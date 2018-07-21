@@ -7,6 +7,12 @@ class RetirementCalculator
     @age = gets.chomp.to_i
     puts "At what age do you plan to retire"
     @retirement_age = gets.chomp.to_i
+    calculate_retirement_year
+  end
+
+  private
+
+  def calculate_retirement_year
     @date = Time.now.year
     @Years_untill_retirement = @retirement_age - @age
     @reatirement_year = @date + @Years_untill_retirement
