@@ -6,6 +6,12 @@ class PizzaParty
     puts "How many pizzas do you have?"
     @pizzas = gets.chomp.to_i
 
+    calculate_portions
+  end
+
+  private
+
+  def calculate_portions
     @total_slices = @pizzas * 8
     @slices_per_person = @total_slices / @guests
 
