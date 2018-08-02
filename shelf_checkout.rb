@@ -15,5 +15,23 @@ class ShelfCheckout
     @third_item_price = gets.chomp.to_i
     puts "Enter the quantity of item 3"
     @third_item_quantity = gets.chomp.to_i
+
+    calculate_tax
+  end
+
+  private
+
+  def calculate_tax
+    @first_items = @first_item_price * @first_item_quantity
+    @second_items = @second_item_price * @second_item_quantity
+    @third_items = @third_item_price * @third_item_quantity
+    @subtotal = @first_items + @second_items + @third_items
+    @tax = (@first_items * 5.5 / 100) + (@second_items * 5.5 / 100) + (@third_items * 5.5 / 100)
+    @total = @subtotal + @tax
+    puts "Subtotal: #{@subtotal}
+Tax: #{@tax}
+Total: #{@total}"
   end
 end
+
+ShelfCheckout.new.greet_customer
